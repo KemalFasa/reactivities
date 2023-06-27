@@ -1,0 +1,15 @@
+/Users/apple/Documents/amal/explore/reactivities/Persistence/bin/Debug/net7.0/Persistence.deps.json
+/Users/apple/Documents/amal/explore/reactivities/Persistence/bin/Debug/net7.0/Persistence.dll
+/Users/apple/Documents/amal/explore/reactivities/Persistence/bin/Debug/net7.0/Persistence.pdb
+/Users/apple/Documents/amal/explore/reactivities/Persistence/bin/Debug/net7.0/Domain.dll
+/Users/apple/Documents/amal/explore/reactivities/Persistence/bin/Debug/net7.0/Domain.pdb
+/Users/apple/Documents/amal/explore/reactivities/Persistence/obj/Debug/net7.0/Persistence.csproj.AssemblyReference.cache
+/Users/apple/Documents/amal/explore/reactivities/Persistence/obj/Debug/net7.0/Persistence.GeneratedMSBuildEditorConfig.editorconfig
+/Users/apple/Documents/amal/explore/reactivities/Persistence/obj/Debug/net7.0/Persistence.AssemblyInfoInputs.cache
+/Users/apple/Documents/amal/explore/reactivities/Persistence/obj/Debug/net7.0/Persistence.AssemblyInfo.cs
+/Users/apple/Documents/amal/explore/reactivities/Persistence/obj/Debug/net7.0/Persistence.csproj.CoreCompileInputs.cache
+/Users/apple/Documents/amal/explore/reactivities/Persistence/obj/Debug/net7.0/Persistence.csproj.CopyComplete
+/Users/apple/Documents/amal/explore/reactivities/Persistence/obj/Debug/net7.0/Persistence.dll
+/Users/apple/Documents/amal/explore/reactivities/Persistence/obj/Debug/net7.0/refint/Persistence.dll
+/Users/apple/Documents/amal/explore/reactivities/Persistence/obj/Debug/net7.0/Persistence.pdb
+/Users/apple/Documents/amal/explore/reactivities/Persistence/obj/Debug/net7.0/ref/Persistence.dll
