@@ -19,6 +19,18 @@ export default class ActivityStore {
     );
   }
 
+  get groupedActivities() {
+    return Object.entries(
+      this.activitiesByDate.reduce((activities, activity) => {
+        const date = activity.date; //represent key untuk grouping
+        activities[date] = activities[date]
+          ? [...activities[date], activity]
+          : [activity]; //jika match date-nya, tambah ke list. Jika tidak match, buat ke list baru [activity]
+        return activities;
+      }, {} as { [key: string]: Activity[] }) //key berupa string dan value berupa array activity
+    );
+  }
+
   loadActivities = async () => {
     this.loadingInitial = true;
     try {
