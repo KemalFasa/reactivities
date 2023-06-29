@@ -19,11 +19,17 @@ axios.interceptors.response.use(
     return response;
   },
   (error: AxiosError) => {
-    const { data, status }: { data: any; status: number } = error.response!;
+    const { data, status, config }: { data: any; status: number; config: any } =
+      error.response!;
     switch (status) {
       case 400:
+        if (typeof data === "string") {
+          toast.error(data);
+        }
+        if (config.method === "get" && data.errors.hasOwnProperty("id")) {
+          history.push("/not-found");
+        }
         if (data.errors) {
-          // toast.error(data);
           const modalStateErrors = [];
           for (const key in data.errors) {
             if (data.errors[key]) {
@@ -31,8 +37,6 @@ axios.interceptors.response.use(
             }
           }
           throw modalStateErrors.flat(); //supaya hanya get list of strings
-        } else {
-          toast.error(data);
         }
         break;
       case 401:
