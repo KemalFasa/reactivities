@@ -6,12 +6,15 @@ import HomePage from "../../features/home/HomePage";
 import ActivityDashboard from "../../features/activities/dashboard/ActivityDashboard";
 import ActivityForm from "../../features/activities/form/ActivityForm";
 import ActivityDetails from "../../features/activities/details/ActivityDetails";
+import TestErrors from "../../features/errors/TestErrors";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   const location = useLocation();
 
   return (
     <>
+      <ToastContainer position="bottom-right" hideProgressBar theme="colored" />
       <Route exact path="/" component={HomePage} /> {/* memisahkan homepage */}
       <Route
         path={"/(.+)"} //jika match dengan "/"+{something else}
@@ -26,6 +29,7 @@ function App() {
                 path={["/createActivity", "/manage/:id"]}
                 component={ActivityForm}
               />
+              <Route path={"/errors"} component={TestErrors} />
             </Container>
           </>
         )}
