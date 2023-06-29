@@ -1,3 +1,4 @@
+import { store } from "./../stores/store";
 import { history } from "./../../index";
 import { Activity } from "./../models/activity";
 import axios, { AxiosError, AxiosResponse } from "axios";
@@ -41,7 +42,8 @@ axios.interceptors.response.use(
         history.push("/not-found");
         break;
       case 500:
-        toast.error("server error");
+        store.commonStore.setServerError(data);
+        history.push("/server-error");
         break;
     }
     return Promise.reject(error);

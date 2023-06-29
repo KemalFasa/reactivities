@@ -1,15 +1,18 @@
 import { createContext, useContext } from "react";
 import ActivityStore from "./activityStore";
+import CommonStore from "./CommonStore";
 
 interface Store {
-  activityStore: ActivityStore; //class bisa digunakan sebagai types
+  activityStore: ActivityStore;
+  commonStore: CommonStore;
 }
 
 export const store: Store = {
   activityStore: new ActivityStore(),
+  commonStore: new CommonStore(),
 };
 
-export const StoreContext = createContext(store); //menambahkan pada react context
+export const StoreContext = createContext(store);
 
 //create simple hook
 export function useStore() {
