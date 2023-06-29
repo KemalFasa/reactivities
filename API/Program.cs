@@ -13,6 +13,7 @@ using Application.Core;
 using MediatR;
 using API.Extensions;
 using FluentValidation.AspNetCore;
+using API.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -64,7 +65,7 @@ if (app.Environment.IsDevelopment())
 }
 
 
-
+  app.UseMiddleware<ExceptionMiddleware>();
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
