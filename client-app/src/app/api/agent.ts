@@ -1,9 +1,7 @@
+import { history } from "./../../index";
 import { Activity } from "./../models/activity";
 import axios, { AxiosError, AxiosResponse } from "axios";
 import { toast } from "react-toastify";
-import { createBrowserHistory } from "history";
-
-export const history = createBrowserHistory();
 
 const sleep = (delay: number) => {
   return new Promise((resolve) => {
@@ -20,10 +18,21 @@ axios.interceptors.response.use(
     return response;
   },
   (error: AxiosError) => {
-    const { data, status } = error.response!;
+    const { data, status }: { data: any; status: number } = error.response!;
     switch (status) {
       case 400:
-        toast.error("bad request");
+        if (data.errors) {
+          // toast.error(data);
+          const modalStateErrors = [];
+          for (const key in data.errors) {
+            if (data.errors[key]) {
+              modalStateErrors.push(data.errors[key]);
+            }
+          }
+          throw modalStateErrors.flat(); //supaya hanya get list of strings
+        } else {
+          toast.error(data);
+        }
         break;
       case 401:
         toast.error("unauthorized");
