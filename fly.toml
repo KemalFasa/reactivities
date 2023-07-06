@@ -1,0 +1,27 @@
+# fly.toml app configuration file generated for reactivities-kemal on 2023-07-06T11:17:15+07:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = "reactivities-kemal"
+primary_region = "ams"
+
+[build]
+  image = "abuvaro/reactivities:latest"
+
+[env]
+ASPNETCORE_URLS="http://+:8080" 
+Cloudinary__Cloudname= "dglcxkw89"
+Cloudinary__ApiKey="555872579128231"
+
+[experimental]
+allowed_public_ports = []
+auto rollback = true
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ["app"]
